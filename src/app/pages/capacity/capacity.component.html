@@ -1,0 +1,40 @@
+<h2>Chi tiết khung năng lực</h2>
+<kendo-grid class="myGrid" [data]="PositionsArray">
+  <kendo-grid-column
+    [width]="150"
+    [headerStyle]="{ 'background-color': '#acc7b5' }"
+    title="Chức Danh"
+  >
+    <ng-container *ngFor="let potision of PositionNameArray">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        <div>
+          {{ potision.name }}
+        </div>
+      </ng-template>
+    </ng-container>
+  </kendo-grid-column>
+
+  <ng-container *ngFor="let competence of CompetenceNameArray">
+    <kendo-grid-column [field]="competence" [title]="competence">
+      <ng-template kendoGridGroupHeaderColumnTemplate let-dataItem>
+        <span>{{ dataItem }} </span>
+      </ng-template>
+    </kendo-grid-column>
+  </ng-container>
+</kendo-grid>
+
+<div *ngFor="let positions of PositionsArray">
+  <div *ngFor="let position of positions">
+    {{ position.PositionID }}
+    {{ position.CompetenceName }}" :::" {{ position.CompetenceLevel }} " ::::"
+    {{ position.CompetenceLevelMax }}
+  </div>
+</div>
+
+<div *ngFor="let item of PositionNameArray">
+  {{ item.name }}
+</div>
+
+<div *ngFor="let items of PositionNameArray">
+  <div *ngFor="let item of PositionNameArray"></div>
+</div>
